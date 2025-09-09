@@ -179,8 +179,8 @@ if __name__ == "__main__":
     if host == "::":
         host = "0.0.0.0"
     
-    print(f"🚀 Servidor iniciando en http://{host}:{port}")
-    print(f"📡 Proxy hacia: {os.getenv('NETDATA_BASE_URL', 'http://localhost:19999')}")
+    print(f"Servidor iniciando en http://{host}:{port}")
+    print(f"Proxy hacia: {os.getenv('NETDATA_BASE_URL', 'http://localhost:19999')}")
     
     uvicorn.run(
         app,
