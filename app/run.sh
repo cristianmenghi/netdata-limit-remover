@@ -24,7 +24,7 @@ if [ ! -d "$ROOT_DIR/venv" ]; then
     
     log "Instalando dependencias..."
     "$ROOT_DIR/venv/bin/pip" install -U pip || log "ADVERTENCIA: Error al actualizar pip"
-    "$ROOT_DIR/venv/bin/pip" install fastapi uvicorn httpx python-dotenv || {
+    "$ROOT_DIR/venv/bin/pip" install fastapi uvicorn httpx urllib3 requests python-dotenv || {
         log "ERROR: No se pudieron instalar las dependencias"
         exit 1
     }
