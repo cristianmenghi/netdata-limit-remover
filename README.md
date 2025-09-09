@@ -3,6 +3,8 @@
 ## Descripción
 Netdata Limit Remover es una aplicación que actúa como proxy para Netdata, permitiendo eliminar las limitaciones de nodos (5) en la interfaz de usuario. Esta herramienta modifica dinámicamente la configuración de Netdata para incluir todos los nodos registrados como preferidos.
 
+Netdata Limit Remover is an application that acts as a proxy for Netdata, allowing you to remove node limitations (5) in the user interface. This tool dynamically modifies Netdata's configuration to include all nodes. 
+
 ## Licencia
 Este proyecto está licenciado bajo AGPLv3 (GNU Affero General Public License versión 3).
 
