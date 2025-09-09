@@ -57,16 +57,28 @@ Agrega el siguiente contenido (ajusta las rutas según tu instalación):
 ```ini
 [Unit]
 Description=Netdata Limit Remover Service
-After=network.target
+After=network.target network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=0
 
 [Service]
-Type=simple
-User=tu_usuario  # Reemplaza con el usuario adecuado
-WorkingDirectory=/ruta/completa/a/netdata-limit-remover
-ExecStart=/ruta/completa/a/netdata-limit-remover/run.sh
-Restart=on-failure
-RestartSec=5
+Type=exec
+User=root
+Group=root
+WorkingDirectory=/path/netdata-limit-remover
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 Environment=PYTHONUNBUFFERED=1
+Environment=HOME=/path
+ExecStart=/bin/bash /path/netdata-limit-remover/run.sh
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=10
+KillMode=mixed
+TimeoutStartSec=60
+TimeoutStopSec=30
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=netdata-limit-remover
 
 [Install]
 WantedBy=multi-user.target
