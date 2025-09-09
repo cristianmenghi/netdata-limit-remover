@@ -107,6 +107,8 @@ Una vez que la aplicación esté en funcionamiento, puedes acceder a ella a trav
 http://HOST:PORT
 ```
 
+Y darle click al skip para continuar del lado inferior derecho del dashboard.
+
 La aplicación actuará como un proxy para tu servidor Netdata, eliminando las limitaciones de nodos en la interfaz de usuario.
 
 ## Solución de problemas
