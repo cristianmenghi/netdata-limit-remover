@@ -1,0 +1,3 @@
+NETDATA_BASE_URL=https://localhost:19999
+PORT=8000
+HOST=::
